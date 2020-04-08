@@ -1,0 +1,6 @@
+{
+    "id": "BinaryArtifactThingIn-_AUTO_",
+    "classId": "BinaryArtifactThingIn:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Transmit binary files across data river Thing"
+}

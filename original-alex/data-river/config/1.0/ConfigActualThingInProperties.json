@@ -1,0 +1,6 @@
+{
+    "id": "ConfigActualThingIn-_AUTO_",
+    "classId": "ConfigActualThingIn:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Config adata actual (response) Thing"
+}

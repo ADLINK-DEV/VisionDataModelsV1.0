@@ -1,0 +1,6 @@
+{
+    "id": "CameraConnectRequestThingIn-_AUTO_",
+    "classId": "CameraConnectRequestThingIn:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Submit & respond to network camera connection requests Thing"
+}

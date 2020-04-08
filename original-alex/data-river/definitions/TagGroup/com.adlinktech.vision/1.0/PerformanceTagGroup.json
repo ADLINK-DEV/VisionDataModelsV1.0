@@ -1,0 +1,33 @@
+{
+    "name":"Performance",
+    "context":"com.adlinktech.vision",
+    "qosProfile":"bestEffortTelemetry",
+    "version":"v1.0",
+    "description":"Inference Engine processing performance update",
+    "tags":[
+        {
+            "name":"engine_id",
+            "description":"Inference engine identifier",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"stream_id",
+            "description":"Stream publisher ID",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"frame_id",
+            "description":"Frame sample ID",
+            "kind":"UINT32",
+            "unit":"NUM"
+        },
+        {
+            "name":"delay",
+            "description":"Inference processing time",
+            "kind":"UINT32",
+            "unit":"milliseconds"
+        }
+    ]
+}

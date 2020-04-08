@@ -1,0 +1,143 @@
+[
+    {
+        "name":"PalletManifest",
+        "context":"com.adlinktech.smartpallet",
+        "qosProfile":"state",
+        "version":"v1.0",
+        "description":"Current Smart Pallet manifest",
+        "tags":[
+            {
+                "name":"id",
+                "description":"Camera/Vision App host Identifier",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"host",
+                "description":"Camera or Pallet App host Identifier",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"total_correct",
+                "description":"Correct tally count - total number of correct packages since restart",
+                "kind":"UINT32",
+                "unit":"n/a"
+            },
+            {
+                "name":"total_wrong",
+                "kind":"UINT32",
+                "description":"Wrong tally count - total number of wrong packages since restart",
+                "unit":"n/a"
+            },
+            {
+                "name":"correct",
+                "description":"Current number of correct packgaes on pallet",
+                "kind":"UINT32",
+                "unit":"n/a"
+            },
+            {
+                "name":"wrong",
+                "description":"Current number of wrong packgaes on pallet",
+                "kind":"UINT32",
+                "unit":"n/a"
+            },
+            {
+                "name":"status",
+                "description":"Current pallet update status",
+                "kind":"STRING",
+                "unit":"com.vision.models.smartpallet.Status"
+            },
+            {
+                "name":"type",
+                "description":"Palletization scenario",
+                "kind":"STRING",
+                "unit":"com.vision.models.smartpallet.PalletType"
+            },
+            {
+                "name":"meta",
+                "description": "Extensible field for embedding metadata as json",
+                "kind":"STRING",
+                "unit":"json"
+            },
+            {
+                "name":"packages",
+                "description":"Current package manifest",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition": "Package"
+            }
+        ]
+    },
+    {
+        "typedefinition": "Package",
+        "tags": [
+            {
+                "name":"id",
+                "description":"DataMatrix code ID",
+                "kind":"STRING",
+                "unit":"ECC200"
+            },
+            {
+                "name":"x",
+                "description":"Physical X coordinate (from 0,0)",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"y",
+                "description":"Physical Y coordinate (from 0,0)",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"z",
+                "description":"Physical height of identified code",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"width",
+                "description":"Physical DataMatrix code width",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"height",
+                "description":"Physical DataMatrix code height",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"pallet",
+                "description":"Current pallet ID",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"target",
+                "description":"Target pallet ID",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"action",
+                "description":"Package action - See Action enum (added to or removed from manifest)",
+                "kind":"STRING",
+                "unit":"com.vision.models.smartpallet.Action"
+            },
+            {
+                "name":"status",
+                "description": "Package status - See Status enum (Correct or Wrong pallet)",
+                "kind":"STRING",
+                "unit":"com.vision.models.smartpallet.Status"
+            },
+            {
+                "name":"meta",
+                "description": "Extensible field for embedding metadata as json",
+                "kind":"STRING",
+                "unit":"json"
+            }
+        ]
+    }
+]

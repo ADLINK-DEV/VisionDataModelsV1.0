@@ -1,0 +1,12 @@
+{
+    "name": "ConfigActualThingOut",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Config adata actual (response)",
+    "outputs": [
+        {
+            "name": "ConfigActualData",
+            "tagGroupId": "ConfigActual:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "PalletRequestThingIn",
+    "context": "com.adlinktech.smartpallet",
+    "version": "v1.0",
+    "description": "Smart pallet specific requests",
+    "inputs": [
+        {
+            "name": "PalletRequestData",
+            "tagGroupId": "PalletRequest:com.adlinktech.smartpallet:v1.0"
+        }
+    ]
+}

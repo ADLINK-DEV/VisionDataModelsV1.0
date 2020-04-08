@@ -1,0 +1,12 @@
+{
+    "name": "CameraConnectRequestThingIn",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Submit & respond to network camera connection requests",
+    "inputs": [
+        {
+            "name": "CameraConnectRequestData",
+            "tagGroupId": "CameraConnectRequest:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

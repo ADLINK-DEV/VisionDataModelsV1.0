@@ -1,0 +1,6 @@
+{
+    "id": "EngineConfigThingOut-_AUTO_",
+    "classId": "EngineConfigThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Inference engines publish config and expected state Thing"
+}

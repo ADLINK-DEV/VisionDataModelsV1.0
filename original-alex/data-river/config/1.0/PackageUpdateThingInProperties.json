@@ -1,0 +1,6 @@
+{
+    "id": "PackageUpdateThingIn-_AUTO_",
+    "classId": "PackageUpdateThingIn:com.adlinktech.smartpallet:v1.0",
+    "contextId": "vision.smartpallet.UNIQUE_IDENTIFIER",
+    "description": "Default Smart pallet package updates Thing"
+}

@@ -1,0 +1,6 @@
+{
+    "id": "DeviceErrorThingOut-_AUTO_",
+    "classId": "DeviceErrorThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Communicate device error Thing"
+}

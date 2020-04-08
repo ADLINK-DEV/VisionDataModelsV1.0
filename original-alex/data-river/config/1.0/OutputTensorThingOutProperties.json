@@ -1,0 +1,6 @@
+{
+    "id": "OutputTensorThingOut-_AUTO_",
+    "classId": "OutputTensorThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Generic network output managed by inference engine Thing"
+}

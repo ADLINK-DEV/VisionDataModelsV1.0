@@ -1,0 +1,6 @@
+{
+    "id": "DeviceInfoThingIn-_AUTO_",
+    "classId": "DeviceInfoThingIn:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Communicates the state & properties of devices for vision applications Thing"
+}

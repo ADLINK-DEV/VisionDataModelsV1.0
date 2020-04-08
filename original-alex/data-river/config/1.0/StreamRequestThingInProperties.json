@@ -1,0 +1,6 @@
+{
+    "id": "StreamRequestThingIn-_AUTO_",
+    "classId": "StreamRequestThingIn:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Manager of data river streams Thing"
+}

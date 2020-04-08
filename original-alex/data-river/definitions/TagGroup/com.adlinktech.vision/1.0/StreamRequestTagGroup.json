@@ -1,0 +1,27 @@
+{
+    "name":"StreamRequest",
+    "context":"com.adlinktech.vision",
+    "qosProfile":"event",
+    "version":"v1.0",
+    "description":"Request model for initating device video streams",
+    "tags":[
+        {
+            "name":"stream_id",
+            "description":"ID of the stream to control",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"enable_stream",
+            "description":"Enable or disable the stream",
+            "kind":"BOOLEAN",
+            "unit":"n/a"
+        },
+        {
+            "name":"framerate",
+            "description":"Specify the framerate that should be streamed",
+            "kind":"FLOAT32",
+            "unit":"frames per second"
+        }
+    ]
+}

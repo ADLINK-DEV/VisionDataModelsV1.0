@@ -1,0 +1,12 @@
+{
+    "name": "DeviceErrorThingOut",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Communicate device error",
+    "outputs": [
+        {
+            "name": "DeviceErrorData",
+            "tagGroupId": "DeviceError:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

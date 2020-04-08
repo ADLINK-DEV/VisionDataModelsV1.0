@@ -1,0 +1,57 @@
+{
+    "name":"DatabaseStatus",
+    "context":"com.adlinktech.smartpallet",
+    "qosProfile":"state",
+    "version":"v1.0",
+    "description":"Smart pallet database status model",
+    "tags":[
+        {
+            "name":"server",
+            "description":"Publishing database server flow ID",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"server_names",
+            "description":"Human readable server identifier",
+            "kind":"STRING",
+            "unit":"com.vision.models.smartpallet.PalletRequestKind"
+        },
+        {
+            "name":"connected",
+            "description":"Requested action state",
+            "kind":"BOOLEAN",
+            "unit":"n/a"
+        },
+        {
+            "name":"last_order",
+            "description":"Order ID of the last order requested",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"last_order_success",
+            "description":"Success status of the last order requested",
+            "kind":"BOOLEAN",
+            "unit":"n/a"
+        },
+        {
+            "name":"last_order_ms",
+            "description":"Time of the last order request",
+            "kind":"INT64",
+            "unit": "milliseconds"
+        },
+        {
+            "name":"last_error",
+            "description":"Last error description",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"last_error_ms",
+            "description":"Time of the last error",
+            "kind":"INT64",
+            "unit":"milliseconds"
+        }
+    ]
+}

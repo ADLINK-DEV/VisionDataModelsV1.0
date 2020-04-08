@@ -1,0 +1,51 @@
+{
+    "name":"CameraConnectRequest",
+    "context":"com.adlinktech.vision",
+    "qosProfile":"event",
+    "version":"v1.0",
+    "description":"Inference engine results for classification model",
+    "tags":[
+        {
+            "name":"id",
+            "description":"Unique camera id",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"uri",
+            "description":"Camera network URI",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"name",
+            "description":"Camera network URI",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"action",
+            "description":"ADD or REMOVE a network camera from a remote service",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"status",
+            "description":"Status string of performed action",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"encoding",
+            "description":"See com::vision::models::CompressionKind",
+            "kind":"STRING",
+            "unit":"Enum"
+        },
+        {
+            "name":"port",
+            "description":"Port number",
+            "kind":"UINT32",
+            "unit":"Value"
+        }
+    ]
+}

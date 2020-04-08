@@ -1,0 +1,6 @@
+{
+    "id": "AcknowledgeThingOut-_AUTO_",
+    "classId": "AcknowledgeThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Vision system alarm confirmation Thing"
+}

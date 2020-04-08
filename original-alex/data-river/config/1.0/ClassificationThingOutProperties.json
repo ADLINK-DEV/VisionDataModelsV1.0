@@ -1,0 +1,6 @@
+{
+    "id": "ClassificationThingOut-_AUTO_",
+    "classId": "ClassificationThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Thing managing inferences produced from Classification model Thing"
+}

@@ -1,0 +1,308 @@
+syntax = "proto3";
+
+import "common.proto";
+
+package com.vision.models;
+
+// Data Interface Definitions
+
+message ConfigRequest {
+    string          id          = 1; // Target Host
+    uint32          request     = 2; // Request ID
+    string          type        = 3; // Type Name
+    string          payload     = 4; // Serialized value
+}
+
+message ConfigActual {
+    string              source  = 1; // Source Device
+    repeated ConfigData data    = 2;
+}
+
+message ConfigData {
+    string          type        = 1; // Type Name
+    string          payload     = 2; // Serialized status value
+}
+
+message DeviceError {
+    string          device_id   = 1; // Source Host
+    string          message     = 2;
+    int32           error_id    = 3;
+    string          description = 4;
+}
+
+// Config File Definitions
+
+enum PrecisionMode {
+    PRECISION_MODE_UNDEFINED        = 0;
+    PRECISION_MODE_UINT8            = 1;
+    PRECISION_MODE_INT8             = 2;
+    PRECISION_MODE_UINT16           = 3;
+    PRECISION_MODE_INT16            = 4;
+    PRECISION_MODE_UINT32           = 5;
+    PRECISION_MODE_INT32            = 6;
+    PRECISION_MODE_UINT64           = 7;
+    PRECISION_MODE_INT64            = 8;
+    PRECISION_MODE_FLOAT16          = 9;
+    PRECISION_MODE_FLOAT32          = 10;
+    PRECISION_MODE_FLOAT64          = 11;
+}
+
+enum ModelType {
+    MODEL_TYPE_UNKNOWN                  = 0;
+    MODEL_TYPE_OBJECT_DETECTION         = 1;
+    MODEL_TYPE_OBJECT_CLASSIFICATION    = 2;
+    MODEL_TYPE_SEMANTIC_SEGMENTATION    = 3;
+}
+
+enum ModelOutputType {
+    MODEL_OUTPUT_UNKNOWN                = 0;
+    MODEL_OUTPUT_GENERIC_TENSOR         = 1;
+    MODEL_OUTPUT_OBJECT_BOUNDING_BOX    = 2;
+    MODEL_OUTPUT_OBJECT_POINT           = 3;
+    MODEL_OUTPUT_CLASSIFICATION_LABEL   = 4;
+    MODEL_OUTPUT_SEGMENTATION_MASK      = 5;
+    MODEL_OUTPUT_IMAGE                  = 6;
+}
+
+enum InputTensorTransformKind {
+    INPUT_TENSOR_TRANSFORM_NONE             = 0;
+    INPUT_TENSOR_TRANSFORM_TENSOR_TO_TENSOR = 1;
+    INPUT_TENSOR_TRANSFORM_TENSOR_TO_IMAGE  = 2;
+    INPUT_TENSOR_TRANSFORM_IMAGE_TO_TENSOR  = 3;
+    INPUT_TENSOR_TRANSFORM_IMAGE_TO_IMAGE   = 4;
+}
+
+message EngineDebugConfig {
+    bool            verbose         = 1;
+    bool            monitor_in      = 2;
+    bool            monitor_out     = 3;
+}
+
+message ImageTransformColorspace {
+    com.vision.models.PixelFormat   format      = 1;
+}
+
+message ImageTransformResize {
+    uint32          width       = 1;
+    uint32          height      = 2;
+}
+
+message ImageTransformCrop {
+    uint32          roi_x1      = 1;
+    uint32          roi_y1      = 2;
+    bool            roi_center  = 3;
+    uint32          width       = 4;
+    uint32          height      = 5;
+}
+
+message ImageTransformStep {
+    oneof step {
+        ImageTransformColorspace    color   = 1;
+        ImageTransformResize        resize  = 2;
+        ImageTransformCrop          crop    = 3;
+    }
+}
+
+message ImageTransformConfig {
+    repeated ImageTransformStep     steps   = 1;
+}
+
+message ImageConfig {
+    uint32                          width           = 1;
+    uint32                          height          = 2;
+    uint32                          channels        = 3;
+    com.vision.models.PixelFormat   format          = 4;
+    bool                            crop            = 5;
+    bool                            resize          = 6;
+    uint32                          roi_x1          = 7;
+    uint32                          roi_y1          = 8;
+    float                           framerate       = 9;
+}
+
+message ArtifactConfig {
+    string          working_dir     = 1;
+    string          graph_path      = 2;
+    string          weights_path    = 3;
+    string          frozen_path     = 4;
+    string          labels_path     = 5; // Path to LabelConfigFile
+    string          model_dir       = 6;
+    string          model_package   = 7;
+    string          model_desc      = 8; // Model Description
+    bool            load_weights    = 9;
+}
+
+message ModelConfig {
+    ModelType                   model_type      = 1;
+    string                      model_name      = 2;
+    PrecisionMode               mode            = 3;
+    float                       threshold       = 4;
+    float                       nms_threshold   = 5;
+    uint32                      batch_size      = 6;
+    ModelOutputType             output_type     = 7;
+}
+
+message EngineGpuConfig {
+    string          gpu_name        = 1;
+    int32           gpu_index       = 2;
+    bool            gpu             = 3;
+}
+
+message PluginConfig {
+    string          name            = 1;
+    string          file            = 2;
+}
+
+message PluginFileConfig {
+    PluginConfig                input       = 1;
+    PluginConfig                execute     = 2;
+    PluginConfig                output      = 3;
+    InputTensorTransformKind    input_kind  = 4;
+}
+
+message EngineStream {
+    bool            enabled         = 1;
+    string          video_stream_id = 2;
+    string          engine_id       = 3;
+}
+
+message EngineClientConfig {
+    bool                    enabled = 1;
+    repeated EngineStream   engines = 2;
+}
+
+// Used to map inference engine output to the source stream. Often the inference
+// engine stream is resized for the engine. This config allows the inference
+// to be mapped to the original (non-resized) VideoFrame stream
+message EngineStreamConfig {
+    string          source_id   = 1;
+    string          output_id   = 2;
+}
+
+message ModelReceiverConfig {
+    bool        enable_data_river   = 1;
+    bool        enable_rest         = 2;
+    string      data_river_target   = 3; // Define a target package name for data river updates
+    int32       rest_port           = 4; // REST Server Port (HTTP)
+    string      rest_path           = 5; // REST Path
+    string      rest_user           = 6;
+    string      rest_password       = 7;
+    bool        rest_auth           = 8; // Enable/Disable REST auth
+}
+
+message ModelReceiverStatus {
+    string      engine_id       = 1;
+    bool        use_data_river  = 2;
+    bool        use_rest        = 3;
+    string      rest_hostname   = 4;
+    int32       rest_port       = 5;
+    string      rest_path       = 6;
+    string      rest_user       = 7;
+    string      rest_password   = 8;
+}
+
+message EngineConfigFile {
+    repeated EngineStreamConfig streams         = 1; // Streams engine subscribes to
+    ImageTransformConfig        image_transform = 2; // Config specifies how to pre-process received images
+    ImageConfig                 image           = 3; // Specifies image format expected by image
+    ModelConfig                 model           = 4;
+    EngineGpuConfig             gpu             = 5;
+    ArtifactConfig              artifacts       = 6;
+    EngineDebugConfig           debug           = 7;
+    PluginFileConfig            plugins         = 8;
+    string                      stream_id       = 9; // This Engine Flow ID
+    RuntimeLayerConfig          io_nodes        = 10;
+    ModelReceiverConfig         model_receiver  = 11;
+}
+
+message TensorNodeConfig {
+    string          name            = 1;
+    PrecisionMode   mode            = 2;
+}
+
+message RuntimeLayerConfig {
+    repeated TensorNodeConfig   inputs  = 1;
+    repeated TensorNodeConfig   outputs = 2;
+}
+
+message ModelManagerConfigFile {
+    string          stream          = 1;
+    string          aws_sqs_queue   = 2;
+    string          aws_region      = 3;
+    string          download_dir    = 4;
+    bool            keep_artifacts  = 5;
+    int32           request_timeout = 6;
+    int32           connect_timeout = 7;
+}
+
+message LabelConfig {
+    int32           obj_id          = 1;
+    int32           class_id        = 2;
+    string          output          = 3;
+    string          label           = 4;
+    string          color           = 5;
+}
+
+message LabelsConfigFile {
+    ModelType               model_type  = 1;
+    string                  model_name  = 2;
+    repeated LabelConfig    labels      = 3;
+}
+
+// Inference Engine Builder/Optimizer Config
+message PlanConfig {
+    string          name            = 1;
+    string          working_dir     = 2;
+    string          graph_path      = 3;
+    string          weights_path    = 4;
+    string          frozen_path     = 5;
+    float           threshold       = 6;
+    float           nms_threshold   = 7;
+    string          gpu_name        = 8;
+    int32           gpu_index       = 9;
+    bool            gpu             = 10;
+    bool            load_weights    = 11;
+    ModelType       model           = 12;
+    PrecisionMode   mode            = 13;
+    BuilderConfig   io_config       = 14;
+    int32           batch_size      = 15;
+}
+
+message GraphDimension {
+    PrecisionMode   type    = 1;
+    int32           depth   = 2;
+}
+
+message LayerConfig {
+    string                  name        = 1;
+    repeated GraphDimension dimensions  = 2;
+}
+
+message BuilderConfig {
+    repeated LayerConfig    inputs      = 1;
+    repeated LayerConfig    outputs     = 2;
+}
+
+message PythonEmbedConfig {
+    string      module_path = 1; // Python Module Path
+    string      module      = 2; // Python Module Name
+    string      init        = 3; // Initialize Function Name
+    string      execute     = 4; // Execute Function Name
+}
+
+message PipelineStageConfig {
+    string      name        = 1; // Stage Name
+    string      config_file = 2; // Pipeline stage config file
+    bool        enable      = 3; // Enable pipeline stage
+}
+
+message PipelineConfig {
+    string                          name        = 1; // Pipeline Name
+    repeated PipelineStageConfig    stages      = 2;
+}
+
+message PerformanceMonitorConfig {
+    bool            enabled         = 1;
+    bool            print_verbose   = 2;
+    bool            csv_enabled     = 3;
+    string          csv_filepath    = 4;
+}

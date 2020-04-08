@@ -1,0 +1,48 @@
+#!/bin/bash
+
+set -e
+
+home=`pwd`
+
+CLEAN=0
+
+if [ "$1" = "clean" ]; then
+	CLEAN=1
+fi
+
+export CMAKE_INSTALL_PREFIX=/opt/adlink/dist
+
+generate()
+{
+	echo "Generate [$1]"
+	cd $1
+	./compile.sh
+	cd $home
+}
+
+build_project()
+{
+	cd $1
+	if [ $CLEAN -eq "1" ]; then
+		echo "Clean [$1]"
+		if [ -d build ]; then
+			rm -rf build
+		fi
+		cd $home
+		return 0
+	fi
+	echo "Build [$1]"
+	mkdir -p build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} ..
+	make -j$(nproc)
+	sudo make install
+	cd $home
+}
+
+generate protobuf
+generate genconfig
+build_project genconfig
+build_project protobuf
+build_project protobuf-models
+build_project data-river

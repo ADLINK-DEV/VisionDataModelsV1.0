@@ -1,0 +1,12 @@
+{
+    "name": "PerformanceThingOut",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Inference engine performance",
+    "outputs": [
+        {
+            "name": "PerformanceData",
+            "tagGroupId": "Performance:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

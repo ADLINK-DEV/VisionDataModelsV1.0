@@ -1,0 +1,12 @@
+{
+    "name": "DeviceInfoThingIn",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Communicates the state & properties of devices for vision applications",
+    "inputs": [
+        {
+            "name": "DeviceInfoData",
+            "tagGroupId": "DeviceInfo:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

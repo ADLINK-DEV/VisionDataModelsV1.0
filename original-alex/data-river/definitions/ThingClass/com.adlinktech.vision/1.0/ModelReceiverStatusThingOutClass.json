@@ -1,0 +1,12 @@
+{
+    "name": "ModelReceiverStatusThingOut",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Inference Engine Model Receiver config status update",
+    "outputs": [
+        {
+            "name": "ModelReceiverStatusData",
+            "tagGroupId": "ModelReceiverStatus:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

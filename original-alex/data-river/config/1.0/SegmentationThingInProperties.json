@@ -1,0 +1,6 @@
+{
+    "id": "SegmentationThingIn-_AUTO_",
+    "classId": "SegmentationThingIn:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Thing managing segmentation mask output from segmentation net Thing"
+}

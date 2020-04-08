@@ -1,0 +1,6 @@
+{
+    "id": "VideoFrameThingIn-_AUTO_",
+    "classId": "VideoFrameThingIn:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Video frames on the data river Thing"
+}

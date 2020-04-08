@@ -1,0 +1,6 @@
+{
+    "id": "ModelReceiverStatusThingOut-_AUTO_",
+    "classId": "ModelReceiverStatusThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Inference Engine Model Receiver config status update Thing"
+}

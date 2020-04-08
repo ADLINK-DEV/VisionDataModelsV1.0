@@ -1,0 +1,166 @@
+syntax = "proto3";
+
+import "common.proto";
+
+package com.vision.models.smartpallet;
+
+enum PalletType {
+    PALLET_TYPE_UNKNOWN         = 0;
+    PALLET_TYPE_BUILD_TO_ORDER  = 1;
+    PALLET_TYPE_INVENTORY       = 2;
+    PALLET_TYPE_SHIPPING        = 3;
+}
+
+enum DetectionType {
+    DETECTION_TYPE_NULL     = 0;
+    DETECTION_TYPE_BOX      = 1;
+    DETECTION_TYPE_PALLET   = 2;
+}
+
+enum BoxType {
+    BOX_TYPE_NULL   = 0;
+    BOX_TYPE_LABEL  = 1;
+    BOX_TYPE_NOSCAN = 2;
+}
+
+enum Action
+{
+    ACTION_NULL     = 0;
+    ACTION_ADD      = 1;
+    ACTION_REMOVE   = 2;
+}
+
+enum Type
+{
+    MODEL_TYPE_UNKNOWN  = 0;
+    TYPE_PACKAGE        = 1;
+    TYPE_PALLET         = 2;
+    TYPE_TICKET         = 3;
+}
+
+enum Status
+{
+    STATUS_NULL                 = 0;
+    STATUS_CORRECT              = 1;
+    STATUS_WRONG                = 2;
+    STATUS_EMPTY                = 3;
+    STATUS_LOADING              = 4;
+    STATUS_CLEARED              = 5;
+    STATUS_NOSCAN               = 6;
+    STATUS_NEW_ID               = 7;
+    STATUS_PALLET_CLOSED        = 8;
+    STATUS_PALLET_UPDATE        = 9;
+    STATUS_WAITING_FOR_MANIFEST = 10;
+    STATUS_PALLET_SYNCED        = 11;
+    STATUS_ERROR                = 12;
+}
+
+message Package
+{
+    string      id      = 1; // DataMatrix Code ID
+    float       x       = 2; // Center X Position (from 0,0)
+    float       y       = 3; // Center Y Position (from 0,0)
+    float       z       = 4; // Height of identified Code
+    float       width   = 5;
+    float       height  = 6;
+    string      pallet  = 7; // Pallet Id
+    string      target  = 8; // Target Pallet Id
+    Action      action  = 9;
+    Status      status  = 10;
+    int64       updated = 11; // Time that the package was added to manifest
+    string      meta    = 12; // Extensible field for embedding metadata as json
+}
+
+message PackageUpdate
+{
+    string  host    = 1; // Host
+    Package package = 2; // Package Data
+}
+
+message DataCode
+{
+    string      id      = 1;  // DataMatrix Code ID
+    float       x       = 2;  // Physical X Coordinate (from 0,0)
+    float       y       = 3;  // Physical Y Coordinate (from 0,0)
+    float       z       = 4;  // Physical Height of identified Code
+    float       width   = 5;  // Physical Width
+    float       height  = 6;  // Physical Height
+    float       x1      = 7;  // Src Image: Percentage
+    float       y1      = 8;  // Src Image: Percentage
+    float       x2      = 9;  // Src Image: Percentage
+    float       y2      = 10; // Src Image: Percentage
+    float       phi     = 11;
+    string      type    = 12; // DataCode Type
+    string      meta    = 13; // Additional code data
+}
+
+message CameraDataCodes
+{
+    string              host    = 1; // Camera Host ID
+    repeated DataCode   codes   = 2; // Data Code IDs
+}
+
+message PalletManifest // Old PalletState
+{
+    string              id              = 1;    // Pallet Id
+    string              host            = 2;    // Host Identifier
+    uint32              total_correct   = 3;    // Correct Tally Count
+    uint32              total_wrong     = 4;    // Wrong Tally Count
+    uint32              correct         = 5;    // Correct Current count
+    uint32              wrong           = 6;    // Wrong Current count
+    Status              status          = 7;    // Pallet Update Status
+    PalletType          type            = 8;    // Pallet Type
+    string              meta            = 9;    // Extensible field for embedding metadata as json
+    repeated Package    packages        = 10;   // Current package manifest
+}
+
+enum PalletRequestKind {
+    PALLET_REQUEST_NULL         = 0;
+    PALLET_REQUEST_CLEAR        = 1;
+    PALLET_REQUEST_SHUTDOWN     = 2;
+    PALLET_REQUEST_CLOSE_PALLET = 3;
+    PALLET_REQUEST_OPEN_ORDER   = 4;
+    PALLET_REQUEST_CLOSE_ORDER  = 5;
+    PALLET_REQUEST_REMOVE_CODE  = 6;
+}
+
+message PalletRequest
+{
+    string              id      = 1;    // Pallet or entity Id
+    PalletRequestKind   kind    = 2;    // Request Kind
+    bool                state   = 3;    // Requested Action State
+    string              payload = 4;    // Request Meta Data
+}
+
+enum BarcodeKind {
+    BARCODE_UNKNOWN                 = 0;
+    BARCODE_1D_GS1_128              = 1;
+    BARCODE_1D_CODE_128             = 2;
+    BARCODE_2D_DATAMATRIX_ECC200    = 3;
+}
+
+message VisionAppConfig {
+    string                  stream_id               = 1; // Pallet Bay ID
+    string                  inference_stream        = 2; // Inference App Stream
+    CameraKind              input                   = 3;
+    bool                    ignore_license          = 4;
+    bool                    parallel_processors     = 5;
+    bool                    local_ux                = 6;
+    string                  config_dir              = 7;
+    string                  camera_config_file      = 8;
+    string                  stream_config_file      = 9;
+    string                  device_config_file      = 10;
+    repeated BarcodeKind    barcode_processors      = 11;
+    bool                    signal_handler_active   = 12;
+}
+
+message DatabaseStatus {
+    string      server              = 1;
+    string      server_name         = 2;
+    bool        connected           = 3;
+    string      last_order          = 4;
+    bool        last_order_success  = 5;
+    int64       last_order_ms       = 6;
+    string      last_error          = 7;
+    int64       last_error_ms       = 8;
+}

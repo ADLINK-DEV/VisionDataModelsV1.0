@@ -1,0 +1,6 @@
+{
+    "id": "PalletManifestThingIn-_AUTO_",
+    "classId": "PalletManifestThingIn:com.adlinktech.smartpallet:v1.0",
+    "contextId": "vision.smartpallet.UNIQUE_IDENTIFIER",
+    "description": "Default Current state (manifest) update for smart pallets Thing"
+}

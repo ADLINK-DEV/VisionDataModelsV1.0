@@ -1,0 +1,6 @@
+{
+    "id": "CameraDataCodesThingIn-_AUTO_",
+    "classId": "CameraDataCodesThingIn:com.adlinktech.smartpallet:v1.0",
+    "contextId": "vision.smartpallet.UNIQUE_IDENTIFIER",
+    "description": "Default DataCodes published by camera sensor Thing"
+}

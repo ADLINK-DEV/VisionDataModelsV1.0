@@ -1,0 +1,12 @@
+{
+    "name": "ConfigRequestThingIn",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Config data request message",
+    "inputs": [
+        {
+            "name": "ConfigRequestData",
+            "tagGroupId": "ConfigRequest:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

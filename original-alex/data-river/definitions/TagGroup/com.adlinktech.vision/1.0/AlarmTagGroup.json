@@ -1,0 +1,51 @@
+{
+    "name":"Alarm",
+    "context":"com.adlinktech.vision",
+    "qosProfile":"event",
+    "version":"v1.0",
+    "description":"Alarms & alert data stream",
+    "tags":[
+        {
+            "name":"id",
+            "description":"Alarm ID",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"stream_id",
+            "description":"Service ID publishing the Alarm",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"target",
+            "description":"Target FlowID of the HMI where alarm will be displayed",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"level",
+            "description":"Alarm Level enum",
+            "kind":"STRING",
+            "unit":"com.vision.models.alarm.level"
+        },
+        {
+            "name":"timestamp",
+            "description":"Alarm Event Timestamp",
+            "kind":"STRING",
+            "unit":"timestamp"
+        },
+        {
+            "name":"message",
+            "description":"Alarm information text",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"meta",
+            "description":"Serialized value",
+            "kind":"STRING",
+            "unit":"N/A"
+        }
+    ]
+}

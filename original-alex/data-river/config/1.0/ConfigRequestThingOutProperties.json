@@ -1,0 +1,6 @@
+{
+    "id": "ConfigRequestThingOut-_AUTO_",
+    "classId": "ConfigRequestThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Config data request message Thing"
+}

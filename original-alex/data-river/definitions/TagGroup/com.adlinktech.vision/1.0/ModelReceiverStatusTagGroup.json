@@ -1,0 +1,57 @@
+{
+    "name":"ModelReceiverStatus",
+    "context":"com.adlinktech.vision",
+    "qosProfile":"state",
+    "version":"v1.0",
+    "description":"Broadcasts the state of the Inference Engine Model Receiver config status",
+    "tags":[
+        {
+            "name":"engine_id",
+            "description":"Source engine identifier",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"use_data_river",
+            "description":"State of the BinaryArtifact data interface - Is it available?",
+            "kind":"BOOLEAN",
+            "unit":"N/A"
+        },
+        {
+            "name":"use_rest",
+            "description":"State of the REST Server - Is it available?",
+            "kind":"BOOLEAN",
+            "unit":"N/A"
+        },
+        {
+            "name":"rest_hostname",
+            "description":"Inference engine model receiver REST server hostname or IP Address",
+            "kind":"STRING",
+            "unit":"N/A"
+        },
+        {
+            "name":"rest_port",
+            "description":"Inference engine model receiver REST server port",
+            "kind":"STRING",
+            "unit":"N/A"
+        },
+        {
+            "name":"rest_path",
+            "description":"Inference engine model receiver REST server endpoint",
+            "kind":"STRING",
+            "unit":"N/A"
+        },
+        {
+            "name":"rest_user",
+            "description":"Inference engine model receiver REST server username",
+            "kind":"STRING",
+            "unit":"N/A"
+        },
+        {
+            "name":"rest_password",
+            "description":"Inference engine model receiver REST server password",
+            "kind":"STRING",
+            "unit":"N/A"
+        }
+    ]
+}

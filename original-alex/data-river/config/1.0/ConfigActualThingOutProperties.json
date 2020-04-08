@@ -1,0 +1,6 @@
+{
+    "id": "ConfigActualThingOut-_AUTO_",
+    "classId": "ConfigActualThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Config adata actual (response) Thing"
+}

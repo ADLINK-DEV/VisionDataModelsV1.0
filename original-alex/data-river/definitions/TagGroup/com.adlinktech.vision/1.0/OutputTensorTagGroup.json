@@ -1,0 +1,77 @@
+[
+    {
+        "name":"OutputTensor",
+        "context":"com.adlinktech.vision",
+        "qosProfile":"telemetry",
+        "version":"v1.0",
+        "description":"Generic inference engine results for any model",
+        "tags":[
+            {
+                "name":"stream_id",
+                "description":"ID of the stream fed into the inference engine",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
+                "name":"engine_id",
+                "description":"Inference engine identifier",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
+                "name":"frame_id",
+                "description":"ID of the input video frame fed to the inference engine",
+                "kind":"UINT32",
+                "unit":"NUM"
+            },
+            {
+                "name":"dimensions",
+                "description":"Total number of dimensions in output tensor",
+                "kind":"UINT32_SEQ",
+                "unit":"index"
+            },
+            {
+                "name":"data",
+                "description":"List of OutputTensor Data (the results)",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition": "TensorData"
+            }
+        ]
+    },
+    {
+        "typedefinition": "TensorData",
+        "tags": [
+            {
+                "name":"index",
+                "description":"Output tensor index",
+                "kind":"UINT32",
+                "unit":"length"
+            },
+            {
+                "name":"output",
+                "description":"Named output tensor",
+                "kind":"UINT32",
+                "unit":"length"
+            },
+            {
+                "name":"rank",
+                "description":"Size of output tensor dimension data",
+                "kind":"UINT32_SEQ",
+                "unit":"length"
+            },
+            {
+                "name":"data",
+                "description":"Data for specified dimension",
+                "kind":"FLOAT32_SEQ",
+                "unit":"raw"
+            },
+            {
+                "name":"data_type",
+                "description":"Precision of data sequence",
+                "kind":"STRING",
+                "unit":"com.vision.models.PrecisionMode"
+            }
+        ]
+    }
+]

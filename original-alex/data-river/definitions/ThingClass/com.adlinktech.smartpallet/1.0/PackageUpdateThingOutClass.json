@@ -1,0 +1,12 @@
+{
+    "name": "PackageUpdateThingOut",
+    "context": "com.adlinktech.smartpallet",
+    "version": "v1.0",
+    "description": "Smart pallet package updates",
+    "outputs": [
+        {
+            "name": "PackageUpdateData",
+            "tagGroupId": "PackageUpdate:com.adlinktech.smartpallet:v1.0"
+        }
+    ]
+}

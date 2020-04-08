@@ -1,0 +1,12 @@
+{
+    "name": "PalletManifestThingOut",
+    "context": "com.adlinktech.smartpallet",
+    "version": "v1.0",
+    "description": "Current state (manifest) update for smart pallets",
+    "outputs": [
+        {
+            "name": "PalletManifestData",
+            "tagGroupId": "PalletManifest:com.adlinktech.smartpallet:v1.0"
+        }
+    ]
+}

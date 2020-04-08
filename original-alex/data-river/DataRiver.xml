@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datariver>
+    <dds>
+        <!-- The URI of the DDS middleware configuration file -->
+        <setting name="OSPL_URI" override="true" value="file://${EDGE_SDK_HOME}/etc/config/datariver_ospl_config_v1.2.xml" />
+        <!-- Security enabled middleware configuration -->
+        <!-- <setting name="OSPL_URI" override="true" value="file://${EDGE_SDK_HOME}/etc/config/datariver_ospl_config_secure_v1.0.xml" /> -->
+
+        <!-- Value to select the proper DDS domainID, default is 0,
+            no communication will take place between (different) DDS-domains
+            so domains can be seen as both a communication- as well as a
+            semantics-boundary -->
+        <!-- <setting name="DDS_DOMAINID" override="false" value="0" /> -->
+
+        <!-- Boolean to select the appropriate deployment mode, default is 'true' implying
+            'standalone' deployment whereas a 'false' value implies federated-deployment
+            that exploits shared-memory between applications/services on a single machine -->
+        <!-- <setting name="DDS_SINGLEPROCESS" override="false" value="true" /> -->
+
+        <!-- For federated deployment, this setting specifies the size of the DDS-managed
+            shared-memory segment (e.g. 100M for a 100 Mbyte segment). For standalone deployment
+            mode (DDS_SINGLEPROCESS=true), the default is 0, implying dynamic heap-memory. When
+            the value is >0 in a standalone deployment, a memory-segment of the specified size
+            will be pre-allocated and managed by the DDS middleware (a less common setup that
+            is mainly used for debugging). -->
+        <!-- <setting name="DDS_SHMEMSIZE" override="false" value="0" /> -->
+
+        <!-- Name (or IP-address) of the network-interface to be used by DDS, default
+            is 'auto' (in which case DDS selects the first multicast-enabled-interface
+            itself) -->
+        <!-- <setting name="DDS_INTERFACE" override="false" value="auto" /> -->
+
+        <!-- multicast-mode as exploited by the underlying DDS infrastructure, default DDS_MULTICAST
+            mode is 'spdp' to allow multicast only for discovery, change DDS_MULTICAST to 'true' if
+            multicast is to be used also for the actual 1-to-n dataflows on the dataRiver -->
+        <!-- <setting name="DDS_MULTICAST" override="false" value="spdp" /> -->
+
+        <!-- Size of the to-be-applied UDP receive-buffer, default is 'default'
+            (in which case DDSI selects a size itself), note that high/large values
+            might (on Linux) imply setting a matching kernrel-level 'rmem_max' max.
+            network-receive-buffer size -->
+        <!-- <setting name="DDS_SOCKET_RECEIVE_BUFFER" override="false" value="default" /> -->
+
+        <!-- Port-number of the cmsoap service to be used (typically set
+            to 50000 for federations as that 'standard' number allows easy-attachment
+            of tools), defaults to 'Auto' (in which case the service dynamically
+            selects an available port and reports that in the info-log) -->
+        <!-- <setting name="DDS_TUNERPORT" override="false" value="Auto" /> -->
+
+        <!-- Certificate authority for identity certificates (PEM format) -->
+        <!-- <setting name="DDS_SECURITY_CA_ID_CERT" override="false" value="file://./identity_ca_cert.pem" /> -->
+
+        <!-- Certificate authority for permissions (PEM format) -->
+        <!-- <setting name="DDS_SECURITY_CA_PERMISSIONS_CERT" override="false" value="file://./permissions_ca_cert.pem" /> -->
+
+        <!-- DDS Security Governance file (SMIME signed) -->
+        <!-- <setting name="DDS_SECURITY_GOVERNANCE" override="false" value="file://./my_governance.p7s" /> -->
+
+        <!-- DDS Security application permissions file (SMIME signed) -->
+        <!-- <setting name="DDS_SECURITY_PERMISSION" override="false" value="file://./my_permissions.p7s" /> -->
+
+        <!-- Application identity certificate (PEM format) -->
+        <!-- <setting name="DDS_SECURITY_ID_CERT" override="false" value="file://./my_app_identity_cert.pem" /> -->
+
+        <!-- Application identity private key (PEM format) -->
+        <!-- <setting name="DDS_SECURITY_ID_KEY" override="false" value="file://./my_app_identity_priv_key.pem" /> -->
+
+    </dds>
+</datariver>

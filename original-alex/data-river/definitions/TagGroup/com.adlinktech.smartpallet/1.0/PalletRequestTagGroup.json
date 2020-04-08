@@ -1,0 +1,33 @@
+{
+    "name":"PalletRequest",
+    "context":"com.adlinktech.smartpallet",
+    "qosProfile":"event",
+    "version":"v1.0",
+    "description":"Smart pallet action request model",
+    "tags":[
+        {
+            "name":"id",
+            "description":"Target entity (effector) identifier",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"kind",
+            "description":"Request type - see PalletRequestKind",
+            "kind":"STRING",
+            "unit":"com.vision.models.smartpallet.PalletRequestKind"
+        },
+        {
+            "name":"state",
+            "description":"Requested action state",
+            "kind":"BOOLEAN",
+            "unit":"n/a"
+        },
+        {
+            "name":"payload",
+            "description":"Request meta data",
+            "kind":"STRING",
+            "unit":"n/a"
+        }
+    ]
+}

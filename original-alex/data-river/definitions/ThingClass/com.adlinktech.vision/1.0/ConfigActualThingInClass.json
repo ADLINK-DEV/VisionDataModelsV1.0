@@ -1,0 +1,12 @@
+{
+    "name": "ConfigActualThingIn",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Config adata actual (response)",
+    "inputs": [
+        {
+            "name": "ConfigActualData",
+            "tagGroupId": "ConfigActual:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

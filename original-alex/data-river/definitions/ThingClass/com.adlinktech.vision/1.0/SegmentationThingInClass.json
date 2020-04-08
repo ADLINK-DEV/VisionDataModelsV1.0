@@ -1,0 +1,12 @@
+{
+    "name": "SegmentationThingIn",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Thing managing segmentation mask output from segmentation net",
+    "inputs": [
+        {
+            "name": "SegmentationData",
+            "tagGroupId": "Segmentation:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

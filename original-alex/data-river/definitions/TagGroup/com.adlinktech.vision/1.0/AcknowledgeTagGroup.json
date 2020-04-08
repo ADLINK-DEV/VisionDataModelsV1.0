@@ -1,0 +1,33 @@
+{
+    "name":"Acknowledge",
+    "context":"com.adlinktech.vision",
+    "qosProfile":"event",
+    "version":"v1.0",
+    "description":"Confirmation of Alarm events",
+    "tags":[
+        {
+            "name":"id",
+            "description":"Alarm ID for alarm being Acknowledged",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"stream_id",
+            "description":"Service ID publishing the Alarm ack.",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"acknowledge",
+            "description":"State of alarm acknowledgement (True: Valid Alarm. False: Not valid)",
+            "kind":"BOOLEAN",
+            "unit":"N/A"
+        },
+        {
+            "name":"message",
+            "description":"Alarm information text",
+            "kind":"STRING",
+            "unit":"n/a"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "id": "PerformanceThingIn-_AUTO_",
+    "classId": "PerformanceThingIn:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Inference engine performance Thing"
+}

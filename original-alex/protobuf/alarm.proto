@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.vision.models.alarm;
+
+enum Level {
+    LEVEL_UNKNOWN   = 0;
+    LEVEL_WARN      = 1;
+    LEVEL_CRITICAL  = 2;
+    LEVEL_FATAL     = 3;
+    LEVEL_OK        = 4;
+    LEVEL_INFO      = 5;
+}
+
+message Alarm {
+    string          id          = 1; // Alarm ID
+    string          stream_id   = 2; // Service ID publishing the Alarm
+    string          target      = 3; // Target FlowID of the HMI where alarm will be displayed
+    Level           level       = 4; // Alarm Level
+    int64           timestamp   = 5; // Alarm Event Timestamp
+    string          message     = 6; // Alarm information text
+    string          meta        = 7; // Serialized value
+}
+
+message Acknowledge {
+    string          id          = 1; // Alarm ID for alarm being Acknowledged
+    string          stream_id   = 2; // Service ID publishing the Alarm ack.
+    bool            acknowledge = 3; // State of alarm acknowledgement (True: Valid Alarm. False: Not valid)
+    string          message     = 4; // Acknowledge details
+}

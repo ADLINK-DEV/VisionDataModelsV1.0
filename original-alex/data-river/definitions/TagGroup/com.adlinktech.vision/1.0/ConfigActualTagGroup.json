@@ -1,0 +1,41 @@
+[
+    {
+        "name":"ConfigActual",
+        "context":"com.adlinktech.vision",
+        "qosProfile":"state",
+        "version":"v1.0",
+        "description":"Current values of configuration topic",
+        "tags":[
+            {
+                "name":"source",
+                "description":"Application ID effecting the config request",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
+                "name":"data",
+                "description":"List of Detection Box Data (the results)",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition": "ConfigData"
+            }
+        ]
+    },
+    {
+        "typedefinition": "ConfigData",
+        "tags": [
+            {
+                "name":"type",
+                "description":"Config Request Type",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"payload",
+                "description":"Current config values",
+                "kind":"STRING",
+                "unit":"n/a"
+            }
+        ]
+    }
+]

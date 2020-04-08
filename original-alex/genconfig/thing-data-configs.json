@@ -1,0 +1,12 @@
+{
+    "PREFIX": "ADLINK",
+    "HEADER_NAMESPACE": "vision-data-river",
+    "CONFIG_DEFINITION_INPUT_CSV": "./thing_class_config.csv",
+    "OUTPUT_HEADER_NAME": "thing-data-configs",
+    "LINUX_INSTALL_PREFIX": "/opt/adlink/dist/etc/vision-data-river",
+    "WIN_INSTALL_PREFIX": "C:/dist/adlink/etc/vision-data-river",
+    "PROTOBUF_MODEL_HEADERS": [
+        "vision-protobuf-data-models/models.h"
+    ],
+    "HEADER_GUARD": "COM_ADLINKTECH_DATARIVER_DATA_RIVER_THING_DATA_CONFIGS"
+}

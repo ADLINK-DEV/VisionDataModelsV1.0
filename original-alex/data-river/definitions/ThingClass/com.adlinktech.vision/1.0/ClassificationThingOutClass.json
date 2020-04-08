@@ -1,0 +1,12 @@
+{
+    "name": "ClassificationThingOut",
+    "context": "com.adlinktech.vision",
+    "version": "v1.0",
+    "description": "Thing managing inferences produced from Classification model",
+    "outputs": [
+        {
+            "name": "ClassificationData",
+            "tagGroupId": "Classification:com.adlinktech.vision:v1.0"
+        }
+    ]
+}

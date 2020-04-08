@@ -1,0 +1,6 @@
+{
+    "id": "AlarmThingOut-_AUTO_",
+    "classId": "AlarmThingOut:com.adlinktech.vision:v1.0",
+    "contextId": "vision.data.UNIQUE_IDENTIFIER",
+    "description": "Default Vision system alert & alarms Thing"
+}

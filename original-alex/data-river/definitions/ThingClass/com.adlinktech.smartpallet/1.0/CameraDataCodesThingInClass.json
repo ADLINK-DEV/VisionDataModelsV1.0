@@ -1,0 +1,12 @@
+{
+    "name": "CameraDataCodesThingIn",
+    "context": "com.adlinktech.smartpallet",
+    "version": "v1.0",
+    "description": "DataCodes published by camera sensor",
+    "inputs": [
+        {
+            "name": "CameraDataCodesData",
+            "tagGroupId": "CameraDataCodes:com.adlinktech.smartpallet:v1.0"
+        }
+    ]
+}
