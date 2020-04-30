@@ -1,0 +1,12 @@
+{
+    "name": "PackageUpdateThingIn",
+    "context": "com.vision.smartpallet",
+    "version": "v1.0",
+    "description": "Smart pallet package updates",
+    "inputs": [
+        {
+            "name": "PackageUpdateData",
+            "tagGroupId": "PackageUpdate:com.vision.smartpallet:v1.0"
+        }
+    ]
+}

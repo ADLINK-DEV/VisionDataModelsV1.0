@@ -1,0 +1,12 @@
+{
+    "name": "AcknowledgeThingIn",
+    "context": "com.vision.alarm",
+    "version": "v1.0",
+    "description": "Acknowledgement of alarms",
+    "inputs": [
+        {
+            "name": "AcknowledgeData",
+            "tagGroupId": "Acknowledge:com.vision.alarm:v1.0"
+        }
+    ]
+}

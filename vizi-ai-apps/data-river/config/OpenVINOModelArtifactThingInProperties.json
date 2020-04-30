@@ -1,0 +1,16 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "OpenVINOModelArtifactThingIn:com.vision.data:v1.0",
+    "contextId": "vision.data.input",
+    "description": "Default Transmit OpenVINO model artifacts across data river Thing",
+    "inputSettings": [
+        {
+            "name": "OpenVINOModelArtifactData",
+            "filters": {
+                "flowIdFilters": [
+                    "FLOW_ID_FILTER"
+                ]
+            }
+        }
+    ]
+}

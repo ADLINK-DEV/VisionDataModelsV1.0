@@ -1,0 +1,12 @@
+{
+    "name": "PalletManifestThingOut",
+    "context": "com.vision.smartpallet",
+    "version": "v1.0",
+    "description": "Current state (manifest) update for smart pallets",
+    "outputs": [
+        {
+            "name": "PalletManifestData",
+            "tagGroupId": "PalletManifest:com.vision.smartpallet:v1.0"
+        }
+    ]
+}

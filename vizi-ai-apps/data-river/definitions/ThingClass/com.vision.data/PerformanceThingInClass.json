@@ -1,0 +1,12 @@
+{
+    "name": "PerformanceThingIn",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Inference engine performance",
+    "inputs": [
+        {
+            "name": "PerformanceData",
+            "tagGroupId": "Performance:com.vision.data:v1.0"
+        }
+    ]
+}

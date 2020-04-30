@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "OpenVINOModelArtifactThingOut:com.vision.data:v1.0",
+    "contextId": "vision.data.output",
+    "description": "Default Transmit OpenVINO model artifacts across data river Thing"
+}

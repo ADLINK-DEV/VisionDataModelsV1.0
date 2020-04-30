@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "EngineInfoThingIn:com.vision.data:v1.0",
+    "contextId": "vision.data.input",
+    "description": "Default Current Inference engine state & status Thing"
+}

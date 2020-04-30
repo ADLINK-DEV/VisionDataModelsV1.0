@@ -1,0 +1,27 @@
+{
+    "name":"ConfigActual",
+    "context":"com.vision.config",
+    "qosProfile":"state",
+    "version":"v1.0",
+    "description":"Current values of configuration topic",
+    "tags":[
+        {
+            "name":"source",
+            "description":"Application ID effecting the config request",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"type",
+            "description":"Config Request Type",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"payload",
+            "description":"Current config values",
+            "kind":"STRING",
+            "unit":"n/a"
+        }
+    ]
+}

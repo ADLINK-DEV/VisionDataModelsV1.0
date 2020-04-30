@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -e
+
+home=`pwd`
+
+BUILD_TYPE="${1:-Debug}"
+
+INSTALL_PATH=/opt/adlink/openvino
+
+generate()
+{
+	echo "Generate [$1]"
+	cd $1
+	./compile.sh
+	cd $home
+}
+
+build_project()
+{
+	cd $1
+	echo "Build [$1]"
+	mkdir -p build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_PATH} -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ..
+	make -j$(nproc)
+	sudo make install
+	cd $home
+}
+
+generate protobuf
+build_project protobuf
+build_project protobuf-models
+build_project data-river

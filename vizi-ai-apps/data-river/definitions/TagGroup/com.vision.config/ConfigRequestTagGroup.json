@@ -1,0 +1,33 @@
+{
+    "name":"ConfigRequest",
+    "context":"com.vision.config",
+    "qosProfile":"event",
+    "version":"v1.0",
+    "description":"Requested configuration for config effector",
+    "tags":[
+        {
+            "name":"id",
+            "description":"Target host id to effect the config request",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"request",
+            "description":"Request ID",
+            "kind":"UINT32",
+            "unit":"n/a"
+        },
+        {
+            "name":"type",
+            "description":"Config Request Type",
+            "kind":"STRING",
+            "unit":"n/a"
+        },
+        {
+            "name":"payload",
+            "description":"Request data",
+            "kind":"STRING",
+            "unit":"n/a"
+        }
+    ]
+}

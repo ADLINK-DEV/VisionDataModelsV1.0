@@ -1,0 +1,173 @@
+syntax = "proto3";
+
+import "config.proto";
+
+package com.vision.models.inference;
+
+enum EngineState {
+    ENGINE_STATE_UNKNOWN    = 0;
+    ENGINE_STATE_ONLINE     = 1;
+    ENGINE_STATE_WORKING    = 2;
+    ENGINE_STATE_OFFLINE    = 3;
+}
+
+enum EngineKind {
+    ENGINE_KIND_UNKNOWN     = 0;
+    ENGINE_KIND_TENSORRT    = 1;
+    ENGINE_KIND_TENSORFLOW  = 2;
+    ENGINE_KIND_ONNX        = 3;
+    ENGINE_KIND_OPENVINO    = 4;
+    ENGINE_KIND_PYTORCH     = 5;
+    ENGINE_KIND_SPIRANET    = 6;
+    ENGINE_KIND_CUSTOM      = 7;
+}
+
+message EngineInfo {
+    string          engine_id       = 1;
+    EngineState     state           = 2;
+}
+
+message EngineConfig {
+    string          engine_id   = 1;
+    string          name        = 2;
+    string          source      = 3;
+    string          version     = 4;
+    EngineKind      kind        = 5;
+    ImageConfig     image       = 6;
+    ModelConfig     model       = 7;
+}
+
+message EngineConfigV2 {
+    string                      engine_id       = 1;
+    repeated EngineStreamConfig streams         = 2;
+    string                      name            = 3;
+    string                      source          = 4;
+    string                      version         = 5;
+    EngineKind                  kind            = 6;
+    ImageConfig                 image           = 7;
+    ModelConfigV2               model           = 8;
+}
+
+message DetectionBoxData {
+    int32      obj_id      = 1;
+    string     obj_label   = 2;
+    int32      class_id    = 3;
+    string     class_label = 4;
+    float      x1          = 5;     // Top Left X (% from 0,0)
+    float      y1          = 6;     // Top Right Y (% from 0,0)
+    float      x2          = 7;     // Bottom Right X (% from 0,0)
+    float      y2          = 8;     // Bottom Right Y (% from 0,0)
+    float      probability = 9;     // Probability
+    string     meta        = 10;    // meta data - e.g. Label
+}
+
+message DetectionBox {
+    string                      stream_id   = 1;
+    string                      engine_id   = 2;
+    uint32                      frame_id    = 3;
+    repeated DetectionBoxData   data        = 4;
+}
+
+message DetectionPointData {
+    int32      obj_id      = 1;
+    string     obj_label   = 2;
+    int32      class_id    = 3;
+    string     class_label = 4;
+    float      x           = 5; // Center X
+    float      y           = 6; // Center Y
+    float      radius      = 7; // Size of Point
+    float      probability = 8; // Probability
+    string     meta        = 9; // meta data - e.g. Label
+}
+
+message DetectionPoint {
+    string                      stream_id   = 1;
+    string                      engine_id   = 2;
+    uint32                      frame_id    = 3;
+    repeated DetectionPointData data        = 4;
+}
+
+message ClassificationData {
+    int32       index       = 1;
+    string      output      = 2;
+    string      label       = 3;
+    float       probability = 4;    // Probability
+}
+
+message Classification {
+    string                      stream_id   = 1;
+    string                      engine_id   = 2;
+    uint32                      frame_id    = 3;
+    repeated ClassificationData data        = 4;
+}
+
+message SegmentationData {
+    int32           id          = 1;
+    int32           width       = 2;
+    int32           height      = 3;
+    int32           size        = 4;    // Payload size in bytes
+    int32           channel     = 5;
+    string          color       = 6;
+    string          label       = 7;
+    float           probability = 8;   // Probability
+    bytes           data        = 9;
+}
+
+message Segmentation {
+    string                      stream_id   = 1;
+    string                      engine_id   = 2;
+    uint32                      frame_id    = 3;
+    repeated SegmentationData   data        = 4;
+}
+
+message TensorData {
+    uint32          index       = 1; // Output tensor index
+    string          output      = 2; // Named output tensor
+    repeated uint32 rank        = 3; // Array specifying size of each dimension
+    repeated float  data        = 4; // Array of tensor data for each dimension
+    PrecisionMode   data_type   = 5; // Precision of data array
+}
+
+message InputTensor {
+    string                  stream_id       = 1;
+    uint32                  frame_id        = 2;
+    int64                   timestamp       = 3;
+    uint32                  dimensions      = 4;
+    repeated TensorData     data            = 5;
+}
+
+message OutputTensor {
+    string              stream_id   = 1;
+    string              engine_id   = 2;
+    uint32              frame_id    = 3;
+    repeated uint32     dimensions  = 4;
+    repeated TensorData data        = 5;
+}
+
+message Performance {
+    string      engine_id   = 1;
+    string      stream_id   = 2;
+    uint32      frame_id    = 3;
+    uint32      delay       = 4;    // Inference Time (ms)
+}
+
+message ModelConfigRequest {
+    string          model_id        = 1;
+    string          version         = 2;
+    string          model_uri       = 3;
+    string          hardware        = 4;
+    float           threshold       = 5;
+    bool            reload          = 6;
+}
+
+message ModelRequest {
+    string          model_id        = 1;
+    string          version         = 2;
+}
+
+message OpenVINOModelArtifact {
+    bytes           data            = 1;
+    PrecisionMode   precision_mode  = 2;
+    ModelOutputType output_type     = 3;
+    string          labels_file     = 4;
+}

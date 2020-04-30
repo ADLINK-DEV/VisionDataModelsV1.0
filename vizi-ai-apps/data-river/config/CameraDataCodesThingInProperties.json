@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "CameraDataCodesThingIn:com.vision.smartpallet:v1.0",
+    "contextId": "vision.smartpallet.input",
+    "description": "Default DataCodes published by camera sensor Thing"
+}

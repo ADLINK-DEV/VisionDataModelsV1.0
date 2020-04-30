@@ -1,0 +1,12 @@
+{
+    "name": "DeviceInfoThingOut",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Communicates the state & properties of devices for vision applications",
+    "outputs": [
+        {
+            "name": "DeviceInfoData",
+            "tagGroupId": "DeviceInfo:com.vision.data:v1.0"
+        }
+    ]
+}

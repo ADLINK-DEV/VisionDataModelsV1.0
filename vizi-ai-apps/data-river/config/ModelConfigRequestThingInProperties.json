@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "ModelConfigRequestThingIn:com.vision.request:v1.0",
+    "contextId": "vision.request.input",
+    "description": "Default Model config request message Thing"
+}

@@ -1,0 +1,12 @@
+{
+    "name": "SegmentationThingOut",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Thing managing segmentation mask output from segmentation net",
+    "outputs": [
+        {
+            "name": "SegmentationData",
+            "tagGroupId": "Segmentation:com.vision.data:v1.0"
+        }
+    ]
+}

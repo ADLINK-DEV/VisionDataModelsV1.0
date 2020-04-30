@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "OutputTensorThingOut:com.vision.data:v1.0",
+    "contextId": "vision.data.output",
+    "description": "Default Generic network output managed by inference engine Thing"
+}

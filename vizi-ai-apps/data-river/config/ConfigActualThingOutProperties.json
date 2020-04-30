@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "ConfigActualThingOut:com.vision.config:v1.0",
+    "contextId": "vision.config.state",
+    "description": "Default Config adata actual (response) Thing"
+}

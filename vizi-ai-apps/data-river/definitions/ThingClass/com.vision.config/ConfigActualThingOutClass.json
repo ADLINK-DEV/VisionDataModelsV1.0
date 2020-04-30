@@ -1,0 +1,12 @@
+{
+    "name": "ConfigActualThingOut",
+    "context": "com.vision.config",
+    "version": "v1.0",
+    "description": "Config adata actual (response)",
+    "outputs": [
+        {
+            "name": "ConfigActualData",
+            "tagGroupId": "ConfigActual:com.vision.config:v1.0"
+        }
+    ]
+}

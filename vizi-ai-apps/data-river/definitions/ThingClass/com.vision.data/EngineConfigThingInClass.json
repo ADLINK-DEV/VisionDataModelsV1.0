@@ -1,0 +1,12 @@
+{
+    "name": "EngineConfigThingIn",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Inference engines publish config and expected state",
+    "inputs": [
+        {
+            "name": "EngineConfigData",
+            "tagGroupId": "EngineConfig:com.vision.data:v1.0"
+        }
+    ]
+}

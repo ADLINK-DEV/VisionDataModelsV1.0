@@ -1,0 +1,21 @@
+{
+   "name":"DeleteStream",
+   "context":"com.adlinktech.vision",
+   "qosProfile":"state",
+   "version":"0.1.0",
+   "description":"Request the deletion of a stream. Target the correct Stream Viewer by setting the FlowId of this DataSample to the ContextId of the Stream Viewer.",
+   "tags":[
+      {
+         "name":"stream_id",
+         "description":"The streamId of the stream that should be deleted.",
+         "kind":"STRING",
+         "unit":"n/a"
+      },
+      {
+         "name":"inference_output_type",
+         "description":"The Inference Engine output type of the stream to be deleted.",
+         "kind":"STRING",
+         "unit":"n/a"
+      }
+   ]
+}

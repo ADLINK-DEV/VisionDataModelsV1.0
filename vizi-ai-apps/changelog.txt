@@ -1,0 +1,32 @@
+0.3.0
+-----
+
+ThingProperties can now be generated with a templated flowIdFilter on a specified inputSettings.name
+
+Added the following Tag Groups with corresponding Thing Classes and Things:
+* EngineConfigV2
+* ModelConfigRequest
+* ModelRequest
+* OpenVINOModelArtifact (with flowIdFilter)
+* ModelManagerInfo
+
+Updated protobuf data structures to include:
+* ModelConfigV2
+* EngineConfigV2
+* ModelConfigRequest
+* ModelRequest
+* OpenVINOModelArtifact
+
+Updated protobuf ArtifactConfig to include model_version
+
+0.2.0
+-----
+
+BUILD_TYPE parameter added to switch between debug and release builds.
+
+Changed gpu config setting to a more general hardware setting.
+
+0.1.0
+-----
+
+Initial version.

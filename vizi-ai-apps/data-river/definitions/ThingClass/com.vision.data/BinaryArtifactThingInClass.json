@@ -1,0 +1,12 @@
+{
+    "name": "BinaryArtifactThingIn",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Transmit binary files across data river",
+    "inputs": [
+        {
+            "name": "BinaryArtifactData",
+            "tagGroupId": "BinaryArtifact:com.vision.data:v1.0"
+        }
+    ]
+}

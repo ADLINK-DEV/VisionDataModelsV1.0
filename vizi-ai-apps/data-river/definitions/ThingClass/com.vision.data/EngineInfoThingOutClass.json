@@ -1,0 +1,12 @@
+{
+    "name": "EngineInfoThingOut",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Current Inference engine state & status",
+    "outputs": [
+        {
+            "name": "EngineInfoData",
+            "tagGroupId": "EngineInfo:com.vision.data:v1.0"
+        }
+    ]
+}

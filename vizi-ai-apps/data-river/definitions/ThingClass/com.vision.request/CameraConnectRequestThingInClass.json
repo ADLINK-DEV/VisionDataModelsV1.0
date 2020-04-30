@@ -1,0 +1,12 @@
+{
+    "name": "CameraConnectRequestThingIn",
+    "context": "com.vision.request",
+    "version": "v1.0",
+    "description": "Submit & respond to network camera connection requests",
+    "inputs": [
+        {
+            "name": "CameraConnectRequestData",
+            "tagGroupId": "CameraConnectRequest:com.vision.request:v1.0"
+        }
+    ]
+}

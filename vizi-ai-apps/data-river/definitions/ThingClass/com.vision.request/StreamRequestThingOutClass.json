@@ -1,0 +1,12 @@
+{
+    "name": "StreamRequestThingOut",
+    "context": "com.vision.request",
+    "version": "v1.0",
+    "description": "Manager of data river streams",
+    "outputs": [
+        {
+            "name": "StreamRequestData",
+            "tagGroupId": "StreamRequest:com.vision.request:v1.0"
+        }
+    ]
+}

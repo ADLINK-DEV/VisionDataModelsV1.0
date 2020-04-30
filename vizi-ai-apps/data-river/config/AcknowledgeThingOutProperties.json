@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "AcknowledgeThingOut:com.vision.alarm:v1.0",
+    "contextId": "vision.alarm.output",
+    "description": "Default Acknowledgement of alarms Thing"
+}

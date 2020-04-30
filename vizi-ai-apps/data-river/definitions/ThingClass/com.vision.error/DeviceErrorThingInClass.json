@@ -1,0 +1,12 @@
+{
+    "name": "DeviceErrorThingIn",
+    "context": "com.vision.error",
+    "version": "v1.0",
+    "description": "Communicate device error",
+    "inputs": [
+        {
+            "name": "DeviceErrorData",
+            "tagGroupId": "DeviceError:com.vision.error:v1.0"
+        }
+    ]
+}

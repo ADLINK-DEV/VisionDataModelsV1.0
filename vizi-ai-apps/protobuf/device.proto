@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+import "common.proto";
+
+package com.vision.models;
+
+enum DeviceStatus {
+    DEVICE_STATUS_UNKNOWN       = 0;
+    DEVICE_STATUS_OFFLINE       = 1;
+    DEVICE_STATUS_ONLINE        = 2;
+    DEVICE_STATUS_CALIBRATE     = 3;
+}
+
+enum DeviceKind {
+    DEVICE_KIND_UNKNOWN         = 0;
+    DEVICE_KIND_USB3            = 1;
+    DEVICE_KIND_GIGE            = 2;
+    DEVICE_KIND_SMARTCAM        = 3;
+    DEVICE_KIND_FRAMEGRABBER    = 4;
+    DEVICE_KIND_RTSP            = 5;
+}
+
+enum ProtocolKind {
+    INTERFACE_NULL  = 0;
+    INTERFACE_V4L2  = 1;
+    INTERFACE_DDS   = 2;
+    INTERFACE_RTSP  = 3;
+    INTERFACE_UDP   = 4;
+    INTERFACE_TCP   = 5;
+}
+
+// All encompassing data structure containing any and all data required to
+// observe & connect to a video device
+message DeviceInfo {
+    string          stream_id       = 1;    // Stream UUID
+    string          mac_address     = 2;    // Host Address
+    string          ip_address      = 3;    // Host Machine IP
+    int32           port            = 4;
+    string          uri             = 5;    // Video Interface URI (rtsp://xx/h264)
+    string          manufacturer    = 6;
+    string          model           = 7;
+    string          serial          = 8;
+    string          fw_version      = 9;
+    string          dev_id          = 10;
+    DeviceStatus    status          = 11;
+    DeviceKind      kind            = 12;
+    ProtocolKind    protocol        = 13;
+}
+
+message StreamRequest {
+    string          stream_id       = 1;
+    bool	        enable_stream   = 2;
+    float           framerate       = 3;
+}
+
+message CameraConnectRequest {
+    string          id              = 1;
+    string          uri             = 2;
+    string          name            = 3;
+    string          action          = 4;
+    string          status          = 5;
+    CompressionKind encoding        = 6;
+    int32           port            = 7;
+}
+
+// Configuration file data model - brokers save list of camera configs
+message CameraConnectRequests {
+    repeated CameraConnectRequest requests  = 1;
+}

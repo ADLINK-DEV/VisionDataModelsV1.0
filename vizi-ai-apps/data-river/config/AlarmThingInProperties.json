@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "AlarmThingIn:com.vision.alarm:v1.0",
+    "contextId": "vision.alarm.input",
+    "description": "Default Alarm notifications Thing"
+}

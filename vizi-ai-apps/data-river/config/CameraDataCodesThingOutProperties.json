@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "CameraDataCodesThingOut:com.vision.smartpallet:v1.0",
+    "contextId": "vision.smartpallet.output",
+    "description": "Default DataCodes published by camera sensor Thing"
+}

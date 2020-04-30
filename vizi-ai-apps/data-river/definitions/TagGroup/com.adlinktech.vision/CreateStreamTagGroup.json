@@ -1,0 +1,21 @@
+{
+   "name":"CreateStream",
+   "context":"com.adlinktech.vision",
+   "qosProfile":"state",
+   "version":"0.1.0",
+   "description":"Request the creation of a stream with given configuration. Stream's are unique within a Stream Viewer per StreamId and Inference output type combination. Target the correct Stream Viewer by setting the FlowId of this DataSample to the ContextId of the Stream Viewer.",
+   "tags":[
+      {
+         "name":"stream_id",
+         "description":"The streamId that the Stream Viewer should read Vision data from.",
+         "kind":"STRING",
+         "unit":"n/a"
+      },
+      {
+         "name":"inference_output_type",
+         "description":"What kind of Inference Engine output type to apply to the stream.",
+         "kind":"STRING",
+         "unit":"n/a"
+      }
+   ]
+}

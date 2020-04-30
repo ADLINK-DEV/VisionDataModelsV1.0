@@ -1,0 +1,191 @@
+[
+   {
+      "name": "EngineConfigV2",
+      "context": "com.vision.data",
+      "qosProfile": "state",
+      "version": "v1.0",
+      "description": "Inference Engine Publishes its current & desired configuration",
+      "tags": [
+         {
+            "name": "engine_id",
+            "description": "Publishing inference engine identifer",
+            "kind": "STRING",
+            "unit": "UUID"
+         },
+         {
+            "name": "name",
+            "description": "Proper name of the inference engine",
+            "kind": "STRING",
+            "unit": "n/a"
+         },
+         {
+            "name": "streams",
+            "description": "Configured streams",
+            "kind": "NVP_SEQ",
+            "unit": "n/a",
+            "typedefinition": "EngineStreamConfig"
+         },
+         {
+            "name": "source",
+            "description": "Producer of the inference engine",
+            "kind": "STRING",
+            "unit": "n/a"
+         },
+         {
+            "name": "version",
+            "description": "Inference engine revision",
+            "kind": "STRING",
+            "unit": "n/a"
+         },
+         {
+            "name": "kind",
+            "description": "Inference engine kind",
+            "kind": "STRING",
+            "unit": "com.vision.models.inference.EngineKind"
+         },
+         {
+            "name": "image",
+            "description": "Configured input image expectations",
+            "kind": "NVP_SEQ",
+            "unit": "n/a",
+            "typedefinition": "ImageConfig"
+         },
+         {
+            "name": "model",
+            "description": "Configured (loaded) model metadata",
+            "kind": "NVP_SEQ",
+            "unit": "n/a",
+            "typedefinition": "ModelConfig"
+         }
+      ]
+   },
+   {
+      "typedefinition": "ImageConfig",
+      "tags": [
+         {
+            "name": "width",
+            "description": "Expected input image width",
+            "kind": "UINT32",
+            "unit": "pixels"
+         },
+         {
+            "name": "height",
+            "description": "Expected input image height",
+            "kind": "UINT32",
+            "unit": "pixels"
+         },
+         {
+            "name": "channels",
+            "description": "Expected input image channel count",
+            "kind": "UINT32",
+            "unit": "n/a"
+         },
+         {
+            "name": "format",
+            "description": "Expected input image pixel format. See com::vision::models::PixelFormat",
+            "kind": "STRING",
+            "unit": "PixelFormat"
+         },
+         {
+            "name": "crop",
+            "description": "Declares whether the input image should be cropped to width & height",
+            "kind": "BOOLEAN",
+            "unit": "N/A"
+         },
+         {
+            "name": "resize",
+            "description": "Declares whether the input image should be resized to width & height",
+            "kind": "BOOLEAN",
+            "unit": "N/A"
+         },
+         {
+            "name": "roi_x1",
+            "description": "Declares Top-Left X position of Region of Interest if image should be croppped",
+            "kind": "UINT32",
+            "unit": "pixels"
+         },
+         {
+            "name": "roi_y1",
+            "description": "Declares Top-Left Y position of Region of Interest if image should be croppped",
+            "kind": "UINT32",
+            "unit": "pixels"
+         },
+         {
+            "name": "framerate",
+            "description": "Specifies the configured/expected framerate for input images treams",
+            "kind": "FLOAT32",
+            "unit": "fps"
+         }
+      ]
+   },
+   {
+      "typedefinition": "ModelConfig",
+      "tags": [
+         {
+            "name": "model_type",
+            "description": "Loaded model type see com::vision::models::ModelConfig",
+            "kind": "STRING",
+            "unit": "ModelType"
+         },
+         {
+            "name": "model_name",
+            "description": "Human readable name of the loaded model",
+            "kind": "STRING",
+            "unit": "n/a"
+         },
+         {
+            "name": "model_version",
+            "description": "The version of the model.",
+            "kind": "STRING",
+            "unit": "n/a"
+         },
+         {
+            "name": "mode",
+            "description": "Loaded model precision. See com::vision::models::PrecisionMode",
+            "kind": "STRING",
+            "unit": "PrecisionMode"
+         },
+         {
+            "name": "threshold",
+            "description": "Configured confidence/probability threshold",
+            "kind": "FLOAT32",
+            "unit": "Percentage"
+         },
+         {
+            "name": "nms_threshold",
+            "description": "Configured Non-Maximum Supression Threshold",
+            "kind": "FLOAT32",
+            "unit": "Percentage"
+         },
+         {
+            "name": "batch_size",
+            "description": "Configured number of samples sent through the network",
+            "kind": "UINT32",
+            "unit": "Number"
+         },
+         {
+            "name": "output_type",
+            "description": "Configured inference output types see com::vision::models::ModelOutputType",
+            "kind": "STRING",
+            "unit": "ModelOutputType"
+         }
+      ]
+   },
+   {
+      "typedefinition": "EngineStreamConfig",
+      "tags": [
+         {
+            "name": "source_id",
+            "description": "The ID of the stream to read video frames from.",
+            "kind": "STRING",
+            "unit": "n/a"
+         },
+         {
+            "name": "output_id",
+            "description": "The ID of the stream to write inference data to. Defaults to SourceID.",
+            "kind": "STRING",
+            "unit": "n/a"
+         }
+      ]
+   }
+]

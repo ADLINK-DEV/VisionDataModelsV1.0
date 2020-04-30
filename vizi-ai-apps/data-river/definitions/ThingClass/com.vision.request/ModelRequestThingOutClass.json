@@ -1,0 +1,12 @@
+{
+    "name": "ModelRequestThingOut",
+    "context": "com.vision.request",
+    "version": "v1.0",
+    "description": "Request data for a model to be sent out over the data river",
+    "outputs": [
+        {
+            "name": "ModelRequestData",
+            "tagGroupId": "ModelRequest:com.vision.request:v1.0"
+        }
+    ]
+}

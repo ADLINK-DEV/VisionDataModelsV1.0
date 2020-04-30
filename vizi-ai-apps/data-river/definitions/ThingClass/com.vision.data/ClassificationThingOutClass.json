@@ -1,0 +1,12 @@
+{
+    "name": "ClassificationThingOut",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Thing managing inferences produced from Classification model",
+    "outputs": [
+        {
+            "name": "ClassificationData",
+            "tagGroupId": "Classification:com.vision.data:v1.0"
+        }
+    ]
+}

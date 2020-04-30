@@ -1,0 +1,12 @@
+{
+    "name": "VideoFrameThingIn",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Video frames on the data river",
+    "inputs": [
+        {
+            "name": "VideoFrameData",
+            "tagGroupId": "VideoFrame:com.vision.data:v1.0"
+        }
+    ]
+}

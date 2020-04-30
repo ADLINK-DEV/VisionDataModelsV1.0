@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "EngineConfigV2ThingIn:com.vision.data:v1.0",
+    "contextId": "vision.data.input",
+    "description": "Default Inference engines publish config and expected state Thing"
+}

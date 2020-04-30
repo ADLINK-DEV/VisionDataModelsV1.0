@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "ClassificationThingOut:com.vision.data:v1.0",
+    "contextId": "vision.data.output",
+    "description": "Default Thing managing inferences produced from Classification model Thing"
+}

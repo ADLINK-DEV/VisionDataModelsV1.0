@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package com.vision.models;
+
+enum CameraKind {
+    CAMERA_KIND_NONE                 = 0;
+    CAMERA_KIND_BASLER               = 1;
+    CAMERA_KIND_GIGE_VISION          = 2;
+    CAMERA_KIND_USB3_VISION          = 3;
+    CAMERA_KIND_FILEREADER           = 4;
+    CAMERA_KIND_GENICAM              = 5;
+    CAMERA_KIND_NEON                 = 6;
+    CAMERA_KIND_RTSP                 = 7;
+    CAMERA_KIND_V4L2                 = 8;
+    CAMERA_KIND_DATA_RIVER           = 9;
+}
+
+enum PixelFormat {
+    PIXEL_FORMAT_UNKNOWN            = 0;
+    PIXEL_FORMAT_MONO8              = 1;
+    PIXEL_FORMAT_MONO10             = 2;
+    PIXEL_FORMAT_MONO10P            = 3;
+    PIXEL_FORMAT_MONO12             = 4;
+    PIXEL_FORMAT_MONO12P            = 5;
+    PIXEL_FORMAT_BAYER_GR8          = 6;
+    PIXEL_FORMAT_BAYER_RG8          = 7;
+    PIXEL_FORMAT_BAYER_GB8          = 8;
+    PIXEL_FORMAT_BAYER_BG8          = 9;
+    PIXEL_FORMAT_BAYER_GR10         = 10;
+    PIXEL_FORMAT_BAYER_GR10P        = 11;
+    PIXEL_FORMAT_BAYER_RG10         = 12;
+    PIXEL_FORMAT_BAYER_RG10P        = 13;
+    PIXEL_FORMAT_BAYER_GB10         = 14;
+    PIXEL_FORMAT_BAYER_GB10P        = 15;
+    PIXEL_FORMAT_BAYER_BG10         = 16;
+    PIXEL_FORMAT_BAYER_BG10P        = 17;
+    PIXEL_FORMAT_BAYER_GR12         = 18;
+    PIXEL_FORMAT_BAYER_GR12P        = 19;
+    PIXEL_FORMAT_BAYER_RG12         = 20;
+    PIXEL_FORMAT_BAYER_RG12P        = 21;
+    PIXEL_FORMAT_BAYER_GB12         = 22;
+    PIXEL_FORMAT_BAYER_GB12P        = 23;
+    PIXEL_FORMAT_BAYER_BG12         = 24;
+    PIXEL_FORMAT_BAYER_BG12P        = 25;
+    PIXEL_FORMAT_RGB8               = 26;
+    PIXEL_FORMAT_BGR8               = 27;
+    PIXEL_FORMAT_RGBa10             = 28;
+    PIXEL_FORMAT_RGBa10p            = 29;
+    PIXEL_FORMAT_RGBa12             = 30;
+    PIXEL_FORMAT_YCBCR422_8         = 31;
+    PIXEL_FORMAT_YUV411_8           = 32; // aka YUV411Packed
+    PIXEL_FORMAT_YUV411_8_UYYVYY    = 33; // aka YUV411Packed
+    PIXEL_FORMAT_YUV422_8           = 34; // aka YUYVPacked
+    PIXEL_FORMAT_YUV422_8_UYVY      = 35; // aka YUV422Packed
+    PIXEL_FORMAT_YUV8_UYV           = 36; // aka YUV444Packed
+}
+
+enum CompressionKind {
+    COMPRESSION_KIND_UNKNOWN        = 0;
+    COMPRESSION_KIND_NONE           = 1;
+    COMPRESSION_KIND_AVC_H264       = 2;
+    COMPRESSION_KIND_HVEC_H265      = 3;
+    COMPRESSION_KIND_PNG            = 4;
+    COMPRESSION_KIND_JPG            = 5;
+    COMPRESSION_KIND_MPEG4          = 6;
+    COMPRESSION_KIND_VMLINK         = 7;
+}
+
+message VideoFrame {
+    string          stream_id       = 1;
+    uint32          frame_id        = 2;
+    int64           timestamp       = 3;    // Image capture timestamp
+    bytes           data            = 4;
+    uint32          width           = 5;
+    uint32          height          = 6;
+    uint32          channels        = 7;
+    uint32          size            = 8;
+    PixelFormat     format          = 9;    // Use Common.PixelFormat
+    CompressionKind compression     = 10;
+    float           framerate       = 11;
+}
+
+message BinaryArtifact {
+    string          source          = 1;
+    string          target          = 2; // Optional
+    string          name            = 3; // Artifact filename
+    uint64          size            = 4;
+    string          kind            = 5;
+    int64           timestamp       = 6; // Updated/Created timestamp
+    bytes           data            = 7;
+}

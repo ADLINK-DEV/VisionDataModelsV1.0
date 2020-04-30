@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "ConfigRequestThingIn:com.vision.config:v1.0",
+    "contextId": "vision.config.request",
+    "description": "Default Config data request message Thing"
+}

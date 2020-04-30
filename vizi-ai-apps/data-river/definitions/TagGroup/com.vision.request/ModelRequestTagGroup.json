@@ -1,0 +1,21 @@
+{
+    "name": "ModelRequest",
+    "context": "com.vision.request",
+    "qosProfile": "event",
+    "version": "v1.0",
+    "description": "Request data for a model to be sent out over the data river",
+    "tags": [
+       {
+          "name": "model_id",
+          "description": "Some unique identifier for the model",
+          "kind": "STRING",
+          "unit": "N/A"
+       },
+       {
+          "name": "version",
+          "description": "The version number of the model",
+          "kind": "STRING",
+          "unit": "N/A"
+       }
+    ]
+ }

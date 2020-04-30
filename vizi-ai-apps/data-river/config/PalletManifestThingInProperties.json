@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "PalletManifestThingIn:com.vision.smartpallet:v1.0",
+    "contextId": "vision.smartpallet.input",
+    "description": "Default Current state (manifest) update for smart pallets Thing"
+}

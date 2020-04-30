@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "StreamRequestThingOut:com.vision.request:v1.0",
+    "contextId": "vision.request.output",
+    "description": "Default Manager of data river streams Thing"
+}

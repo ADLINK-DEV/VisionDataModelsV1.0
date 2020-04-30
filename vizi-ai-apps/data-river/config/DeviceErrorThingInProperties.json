@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "DeviceErrorThingIn:com.vision.error:v1.0",
+    "contextId": "vision.data.error",
+    "description": "Default Communicate device error Thing"
+}

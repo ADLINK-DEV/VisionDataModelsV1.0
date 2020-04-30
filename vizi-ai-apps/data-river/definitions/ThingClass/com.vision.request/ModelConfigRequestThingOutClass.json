@@ -1,0 +1,12 @@
+{
+    "name": "ModelConfigRequestThingOut",
+    "context": "com.vision.request",
+    "version": "v1.0",
+    "description": "Request data for an inference engine to update its model configuration",
+    "outputs": [
+        {
+            "name": "ModelConfigRequestData",
+            "tagGroupId": "ModelConfigRequest:com.vision.request:v1.0"
+        }
+    ]
+}

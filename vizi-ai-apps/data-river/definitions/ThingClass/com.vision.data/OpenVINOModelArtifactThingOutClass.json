@@ -1,0 +1,12 @@
+{
+    "name": "OpenVINOModelArtifactThingOut",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Inference engine model artifact and associated metadata",
+    "outputs": [
+        {
+            "name": "OpenVINOModelArtifactData",
+            "tagGroupId": "OpenVINOModelArtifact:com.vision.data:v1.0"
+        }
+    ]
+}

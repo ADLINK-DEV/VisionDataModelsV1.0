@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "PalletRequestThingIn:com.vision.smartpallet:v1.0",
+    "contextId": "vision.smartpallet.input",
+    "description": "Default Smart pallet specific requests Thing"
+}

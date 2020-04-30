@@ -1,0 +1,52 @@
+{
+    "name":"BinaryArtifact",
+    "context":"com.vision.data",
+    "qosProfile":"event",
+    "version":"v1.0",
+    "description":"Message containing serialized file artifact",
+    "tags":[
+        {
+            "name":"source",
+            "description":"Artifact origin",
+            "kind":"STRING",
+            "unit":"N/A"
+        },
+        {
+            "name":"target",
+            "description":"(Optional) URI/ID of the intended recepient/use case",
+            "kind":"STRING",
+            "unit":"N/A"
+        },
+        {
+            "name":"name",
+            "description":"Artifact name",
+            "kind":"STRING",
+            "unit":"N/A"
+        },
+        {
+            "name":"size",
+            "description":"Data size",
+            "kind":"UINT64",
+            "unit":"bytes"
+        },
+
+        {
+            "name":"kind",
+            "description":"Artifact description",
+            "kind":"STRING",
+            "unit":"N/A"
+        },
+        {
+            "name":"timestamp",
+            "description":"Updated/Created timestamp",
+            "kind":"UINT64",
+            "unit":"time"
+        },
+        {
+            "name":"data",
+            "description":"List of Detection Box Data (the results)",
+            "kind":"TYPE_BYTE_SEQ",
+            "unit":"n/a"
+        }
+    ]
+}

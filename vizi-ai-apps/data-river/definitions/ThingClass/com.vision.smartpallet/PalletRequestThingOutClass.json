@@ -1,0 +1,12 @@
+{
+    "name": "PalletRequestThingOut",
+    "context": "com.vision.smartpallet",
+    "version": "v1.0",
+    "description": "Smart pallet specific requests",
+    "outputs": [
+        {
+            "name": "PalletRequestData",
+            "tagGroupId": "PalletRequest:com.vision.smartpallet:v1.0"
+        }
+    ]
+}

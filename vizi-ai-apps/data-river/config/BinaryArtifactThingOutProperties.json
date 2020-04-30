@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "BinaryArtifactThingOut:com.vision.data:v1.0",
+    "contextId": "vision.data.output",
+    "description": "Default Transmit binary files across data river Thing"
+}

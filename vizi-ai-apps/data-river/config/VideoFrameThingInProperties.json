@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "VideoFrameThingIn:com.vision.data:v1.0",
+    "contextId": "vision.data.input",
+    "description": "Default Video frames on the data river Thing"
+}

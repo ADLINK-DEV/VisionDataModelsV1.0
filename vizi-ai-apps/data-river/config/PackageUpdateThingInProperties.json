@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "PackageUpdateThingIn:com.vision.smartpallet:v1.0",
+    "contextId": "vision.smartpallet.input",
+    "description": "Default Smart pallet package updates Thing"
+}

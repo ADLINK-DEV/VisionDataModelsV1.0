@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "VideoFrameThingOut:com.vision.data:v1.0",
+    "contextId": "vision.data.output",
+    "description": "Default Video frames on the data river Thing"
+}

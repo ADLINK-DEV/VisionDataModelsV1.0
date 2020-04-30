@@ -1,0 +1,21 @@
+{
+    "name": "ModelManagerInfo",
+    "context": "com.vision.config",
+    "qosProfile": "state",
+    "version": "v1.0",
+    "description": "Configuration information for a Model Manager",
+    "tags": [
+        {
+            "name": "ip_address",
+            "description": "The IP address of the Model Manager",
+            "kind": "STRING",
+            "unit": "N/A"
+        },
+        {
+            "name": "port",
+            "description": "The port that the REST server uses",
+            "kind": "UINT16",
+            "unit": "N/A"
+        }
+    ]
+}

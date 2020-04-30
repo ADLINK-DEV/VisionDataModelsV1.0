@@ -1,0 +1,12 @@
+{
+    "name": "ConfigRequestThingIn",
+    "context": "com.vision.config",
+    "version": "v1.0",
+    "description": "Config data request message",
+    "inputs": [
+        {
+            "name": "ConfigRequestData",
+            "tagGroupId": "ConfigRequest:com.vision.config:v1.0"
+        }
+    ]
+}

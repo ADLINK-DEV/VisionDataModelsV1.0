@@ -1,0 +1,12 @@
+{
+    "name": "OutputTensorThingIn",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Generic network output managed by inference engine",
+    "inputs": [
+        {
+            "name": "OutputTensorData",
+            "tagGroupId": "OutputTensor:com.vision.data:v1.0"
+        }
+    ]
+}

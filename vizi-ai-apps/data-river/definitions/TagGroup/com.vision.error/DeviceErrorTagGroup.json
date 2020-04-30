@@ -1,0 +1,21 @@
+{
+    "name":"DeviceError",
+    "context":"com.vision.error",
+    "qosProfile":"event",
+    "version":"v1.0",
+    "description":"Device error log",
+    "tags":[
+        {
+            "name":"device_id",
+            "description":"Publishing Device",
+            "kind":"STRING",
+            "unit":"UUID"
+        },
+        {
+            "name":"message",
+            "description":"Error description",
+            "kind":"STRING",
+            "unit":"n/a"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "SegmentationThingOut:com.vision.data:v1.0",
+    "contextId": "vision.data.output",
+    "description": "Default Thing managing segmentation mask output from segmentation net Thing"
+}

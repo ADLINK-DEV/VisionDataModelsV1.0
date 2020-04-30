@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "StreamRequestThingIn:com.vision.request:v1.0",
+    "contextId": "vision.request.input",
+    "description": "Default Manager of data river streams Thing"
+}

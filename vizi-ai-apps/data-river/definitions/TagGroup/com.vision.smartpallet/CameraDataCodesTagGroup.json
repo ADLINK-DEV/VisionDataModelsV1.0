@@ -1,0 +1,107 @@
+[
+    {
+        "name":"CameraDataCodes",
+        "context":"com.vision.smartpallet",
+        "qosProfile":"event",
+        "version":"v1.0",
+        "description":"Collection of DataMatrix codes published by vision app",
+        "tags":[
+            {
+                "name":"host",
+                "description":"Camera/Vision App host Identifier",
+                "kind":"STRING",
+                "unit":"UUID"
+            },
+            {
+                "name":"codes",
+                "description":"List of DataMatrix codes (the results)",
+                "kind":"NVP_SEQ",
+                "unit":"n/a",
+                "typedefinition": "DataCode"
+            }
+        ]
+    },
+    {
+        "typedefinition": "DataCode",
+        "tags": [
+            {
+                "name":"id",
+                "description":"DataMatrix code ID",
+                "kind":"STRING",
+                "unit":"ECC200"
+            },
+            {
+                "name":"x",
+                "description":"Physical X coordinate (from 0,0)",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"y",
+                "description":"Physical Y coordinate (from 0,0)",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"z",
+                "description":"Physical height of identified code",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"width",
+                "description":"Physical DataMatrix code width",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"height",
+                "description":"Physical DataMatrix code height",
+                "kind":"FLOAT32",
+                "unit":"inch"
+            },
+            {
+                "name":"x1",
+                "description":"Top Left X Coordinate (% from 0,0) in pixels in src image",
+                "kind":"FLOAT32",
+                "unit":"Percentage"
+            },
+            {
+                "name":"y1",
+                "description":"Top Left Y Coordinate (% from 0,0) in pixels in src image",
+                "kind":"FLOAT32",
+                "unit":"Percentage"
+            },
+            {
+                "name":"x2",
+                "description":"Bottom Right X Coordinate (% from 0,0) in pixels in src image",
+                "kind":"FLOAT32",
+                "unit":"Percentage"
+            },
+            {
+                "name":"y2",
+                "description":"Bottom Right Y Coordinate (% from 0,0) in pixels in src image",
+                "kind":"FLOAT32",
+                "unit":"Percentage"
+            },
+            {
+                "name":"phi",
+                "description":"Rotation of DataMatrix code",
+                "kind":"FLOAT32",
+                "unit":"radians"
+            },
+            {
+                "name":"type",
+                "description":"DataCode type (ECC200, etc.)",
+                "kind":"STRING",
+                "unit":"n/a"
+            },
+            {
+                "name":"meta",
+                "description":"Buffer for DataCode metadata",
+                "kind":"STRING",
+                "unit":"N/A"
+            }
+        ]
+    }
+]

@@ -1,0 +1,12 @@
+{
+    "name": "BinaryArtifactThingOut",
+    "context": "com.vision.data",
+    "version": "v1.0",
+    "description": "Transmit binary files across data river",
+    "outputs": [
+        {
+            "name": "BinaryArtifactData",
+            "tagGroupId": "BinaryArtifact:com.vision.data:v1.0"
+        }
+    ]
+}

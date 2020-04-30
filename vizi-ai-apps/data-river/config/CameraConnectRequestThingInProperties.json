@@ -1,0 +1,6 @@
+{
+    "id": "THING_PROPERTIES_ID",
+    "classId": "CameraConnectRequestThingIn:com.vision.request:v1.0",
+    "contextId": "vision.request.input",
+    "description": "Default Submit & respond to network camera connection requests Thing"
+}
